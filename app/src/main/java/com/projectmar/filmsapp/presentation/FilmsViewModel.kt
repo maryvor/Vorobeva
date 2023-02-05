@@ -5,9 +5,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.projectmar.filmsapp.data.cloud.CloudModule
 import com.projectmar.filmsapp.data.cloud.FilmsCloudDataSource
-import com.projectmar.filmsapp.data.cloud.FilmsRepositoryImpl
+import com.projectmar.filmsapp.data.FilmsRepositoryImpl
 import com.projectmar.filmsapp.data.cloud.FilmsService
 import com.projectmar.filmsapp.domain.FilmInfo
 import com.projectmar.filmsapp.domain.FilmsRepository
@@ -27,7 +28,7 @@ class FilmsViewModel : ViewModel() {
 
     fun loadTop() {
         viewModelScope.launch() {
-            _topList = getTopListUseCase.invoke() as MutableLiveData<PagingData<FilmInfo>>
+            _topList = getTopListUseCase.invoke().cachedIn(this) as MutableLiveData<PagingData<FilmInfo>>
 
         }
     }

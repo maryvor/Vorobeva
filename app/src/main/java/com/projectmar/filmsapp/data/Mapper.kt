@@ -1,4 +1,4 @@
-package com.projectmar.filmsapp.data.cloud
+package com.projectmar.filmsapp.data
 
 import com.projectmar.filmsapp.data.cloud.model.FilmDetailsDto
 import com.projectmar.filmsapp.data.cloud.model.FilmModelDto

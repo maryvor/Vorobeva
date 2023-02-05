@@ -1,9 +1,10 @@
-package com.projectmar.filmsapp.data.cloud
+package com.projectmar.filmsapp.data
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Transformations
 import androidx.paging.PagingData
 import androidx.paging.map
+import com.projectmar.filmsapp.data.cloud.FilmsCloudDataSource
 import com.projectmar.filmsapp.data.cloud.model.Result
 import com.projectmar.filmsapp.domain.FilmDetails
 import com.projectmar.filmsapp.domain.FilmInfo

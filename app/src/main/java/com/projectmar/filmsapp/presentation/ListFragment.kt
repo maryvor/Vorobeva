@@ -60,7 +60,7 @@ class ListFragment : Fragment() {
 
         binding.mainListRv.adapter = adapter
 
-        viewModel.loadTop()
+        if (savedInstanceState == null) viewModel.loadTop()
 
         viewModel.topList.observe(viewLifecycleOwner) {
             lifecycleScope.launch { adapter.submitData(it) }

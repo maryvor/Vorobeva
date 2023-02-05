@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.projectmar.filmsapp.data.cloud.CloudModule
 import com.projectmar.filmsapp.data.cloud.FilmsCloudDataSource
-import com.projectmar.filmsapp.data.cloud.FilmsRepositoryImpl
+import com.projectmar.filmsapp.data.FilmsRepositoryImpl
 import com.projectmar.filmsapp.data.cloud.FilmsService
 import com.projectmar.filmsapp.data.cloud.model.Result
 import com.projectmar.filmsapp.domain.FilmDetails

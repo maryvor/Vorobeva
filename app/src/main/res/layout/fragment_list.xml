@@ -69,6 +69,7 @@
         android:layout_height="wrap_content"
         android:backgroundTint="@color/loading_items_blue"
         android:text="@string/repeat_button"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/error_tv" />
