@@ -20,16 +20,13 @@ import kotlinx.coroutines.launch
 class ListFragment : Fragment() {
 
     private lateinit var binding: FragmentListBinding
-
     private val viewModel by lazy { ViewModelProvider(this)[FilmsViewModel::class.java] }
-
     private var showFragment: ShowFragment = ShowFragment.Empty()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         showFragment = (context as ShowFragment)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,6 +57,7 @@ class ListFragment : Fragment() {
         // for infinite list
         //val loaderStateAdapter = LoadStateAdapter { adapter.retry() }
         // binding.mainListRv.adapter = adapter.withLoadStateFooter(loaderStateAdapter)
+
         binding.mainListRv.adapter = adapter
 
         viewModel.loadTop()
@@ -73,7 +71,6 @@ class ListFragment : Fragment() {
         }
         binding.listToolbar.inflateMenu(R.menu.list_menu)
         super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDetach() {

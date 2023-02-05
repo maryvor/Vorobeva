@@ -52,7 +52,7 @@ class DetailsFragment : Fragment() {
             binding.description.text = it.description
             binding.genres.text = String.format(genresTemplate, it.genres)
             binding.countries.text = String.format(countriesTemplate, it.countries)
-            Glide.with(requireContext()).load(it.banner).apply(
+            Glide.with(this).load(it.banner).apply(
                 RequestOptions()
                     .placeholder(R.drawable.loading_animation)
                     .error(R.drawable.ic_broken_image)
