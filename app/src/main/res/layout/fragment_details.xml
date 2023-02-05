@@ -8,21 +8,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:context=".DetailsFragment">
+        tools:context=".presentation.DetailsFragment">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
 
         <ImageView
             android:id="@+id/banner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
-            android:src="@drawable/img" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/title"
             style="@style/text_items_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
             tools:text="Название фильма" />
 
         <TextView
@@ -30,8 +38,7 @@
             style="@style/text_items_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/test_text"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             tools:text="Сопротивление собирает отряд для выполнения особой миссии - надо выкрасть чертежи самого совершенного и мертоносного оружия Империи. Не всем суждено вернуться домой, но герои готовы к этому, ведь на кону судьба Галактики" />
 
         <TextView
@@ -39,7 +46,7 @@
             style="@style/text_items_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             tools:text="Жанры: фантастика, приключения" />
 
         <TextView
@@ -47,8 +54,7 @@
             style="@style/text_items_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             tools:text="Жанры: фантастика, приключения" />
 
         <TextView
@@ -56,9 +62,10 @@
             style="@style/text_items_details"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
-
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
             tools:text="Год выпуска: 2019" />
+
+
 
 
     </LinearLayout>

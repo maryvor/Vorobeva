@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
             android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="24dp"
             android:ellipsize="end"
             android:maxLines="1"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
@@ -36,7 +36,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/film_image"
             app:layout_constraintTop_toTopOf="@+id/film_image"
-            tools:text="Чебурашка Чебурашка Чебурашка Чебурашка" />
+            tools:text="MMMMMMMMMMMMMMMMMMMM" />
 
         <TextView
             android:id="@+id/genres_year"
@@ -45,6 +45,7 @@
             android:layout_marginTop="8dp"
             android:ellipsize="end"
             android:maxLines="1"
+            android:layout_marginEnd="24dp"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Body2"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
