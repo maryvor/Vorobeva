@@ -11,25 +11,36 @@ class MainActivity : AppCompatActivity(), ShowFragment {
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, ListFragment.newInstance(), null)
-                .commit()
+            showFragment(ListFragment.newInstance(), false)
         }
     }
 
-    override fun showFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment, null)
-            .addToBackStack(fragment.javaClass.simpleName)
-            .commit()
+    override fun showFragment(fragment: Fragment, add: Boolean) {
+        val transaction = supportFragmentManager.beginTransaction()
+        val container = R.id.fragment_container
+        if (add)
+            transaction.add(container, fragment)
+                .addToBackStack(fragment.javaClass.simpleName)
+        else
+            transaction.add(container, fragment)
+        transaction.commit()
+    }
+
+    override fun popBackStack() {
+        supportFragmentManager.popBackStack()
     }
 }
 
+
 interface ShowFragment {
 
-    fun showFragment(fragment: Fragment)
+    fun showFragment(fragment: Fragment, add: Boolean)
+    fun popBackStack()
 
     class Empty : ShowFragment {
-        override fun showFragment(fragment: Fragment) = Unit
+        override fun showFragment(fragment: Fragment, add: Boolean) = Unit
+        override fun popBackStack() {
+
+        }
     }
 }

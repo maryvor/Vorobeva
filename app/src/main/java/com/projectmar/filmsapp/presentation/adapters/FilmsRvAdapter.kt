@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.projectmar.filmsapp.R
 import com.projectmar.filmsapp.databinding.ListItemBinding
 import com.projectmar.filmsapp.domain.FilmInfo
@@ -40,12 +41,17 @@ class FilmsRvAdapter(
                 val genresYearsTemplate =
                     context.resources.getString(R.string.list_item_genres_year_template)
                 this.filmTitle.text = film.name
-                this.genresYear.text =String.format(genresYearsTemplate, film.genres, film.year)
-                Glide.with(context).load(film.smallImg).into(filmImage)
+                this.genresYear.text = String.format(genresYearsTemplate, film.genres, film.year)
+                Glide.with(context).load(film.smallImg).apply(
+                    RequestOptions()
+                        .placeholder(R.drawable.loading_animation)
+                        .error(R.drawable.ic_broken_image)
+                ).into(filmImage)
                 this@FilmInfoViewHolder.itemView.setOnClickListener {
                     onFilmClickListener.onFilmClick(film)
                 }
-                this.isFavouriteSmb.visibility = if (film.isFavourite) View.VISIBLE else View.INVISIBLE
+                this.isFavouriteSmb.visibility =
+                    if (film.isFavourite) View.VISIBLE else View.INVISIBLE
             }
         }
     }
